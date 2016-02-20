@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D83DB751C786D020072C8C6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83DB741C786D020072C8C6 /* AboutViewController.swift */; };
+		3D83DB771C7872F70072C8C6 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 3D83DB761C7872F70072C8C6 /* BullsEye.html */; };
 		3DEFC52D1C76868400E4E761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFC52C1C76868400E4E761 /* AppDelegate.swift */; };
 		3DEFC52F1C76868400E4E761 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFC52E1C76868400E4E761 /* ViewController.swift */; };
 		3DEFC5321C76868400E4E761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEFC5301C76868400E4E761 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D83DB741C786D020072C8C6 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = ../AboutViewController.swift; sourceTree = "<group>"; };
+		3D83DB761C7872F70072C8C6 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 		3DEFC5291C76868400E4E761 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEFC52C1C76868400E4E761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEFC52E1C76868400E4E761 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,9 +60,11 @@
 			children = (
 				3DEFC52C1C76868400E4E761 /* AppDelegate.swift */,
 				3DEFC52E1C76868400E4E761 /* ViewController.swift */,
+				3D83DB741C786D020072C8C6 /* AboutViewController.swift */,
 				3DEFC5301C76868400E4E761 /* Main.storyboard */,
 				3DEFC5331C76868400E4E761 /* Assets.xcassets */,
 				3DEFC5351C76868400E4E761 /* LaunchScreen.storyboard */,
+				3D83DB761C7872F70072C8C6 /* BullsEye.html */,
 				3DEFC5381C76868400E4E761 /* Info.plist */,
 			);
 			path = BullsEye;
@@ -123,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DEFC5371C76868400E4E761 /* LaunchScreen.storyboard in Resources */,
+				3D83DB771C7872F70072C8C6 /* BullsEye.html in Resources */,
 				3DEFC5341C76868400E4E761 /* Assets.xcassets in Resources */,
 				3DEFC5321C76868400E4E761 /* Main.storyboard in Resources */,
 			);
@@ -135,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D83DB751C786D020072C8C6 /* AboutViewController.swift in Sources */,
 				3DEFC52F1C76868400E4E761 /* ViewController.swift in Sources */,
 				3DEFC52D1C76868400E4E761 /* AppDelegate.swift in Sources */,
 			);
@@ -284,6 +292,7 @@
 				3DEFC53D1C76868400E4E761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
