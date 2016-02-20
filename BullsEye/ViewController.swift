@@ -12,9 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
     
     var currentValue: Int = 0
     var targetValue: Int = 0
+    var score:Int = 0
+    var round: Int = 0
     
 
     override func viewDidLoad() {
@@ -22,7 +26,7 @@ class ViewController: UIViewController {
         
         //method to start the round and gen new random number
 
-        startNewRound()
+        startNewGame()
         updateLabels()
         
     }
@@ -34,18 +38,38 @@ class ViewController: UIViewController {
     
     @IBAction  func showAlert() {
         
-        let message = "The value of slider is \(currentValue)" + "\n The target value is: \(targetValue)"
+        //finding the diffrence between the two values
+        //use abs method to turn number to postive if it return a negative value
+        
+        let difference = abs(currentValue - targetValue)
+        var points = 100 - difference
+        
+        //custom title feedback based on the score
+        let title:String
+        
+        if difference == 0 {
+            title = "Perfect!"
+            points += 100
+        } else if difference < 5 {
+            title = "You almost had it!"
+            points += 50
+        }else if difference < 10 {
+            title = "Pretty close!"
+        }else {
+            title = "Not even close!"
+        }
+        
+        score += points
+        let message = "You scored \(points) points"
         
         //alert messasge window display
-        let alert = UIAlertController(title: "Check Result", message: message, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        //in the handler pass closure when button is tapped
+        let action = UIAlertAction(title: "OK", style: .Default, handler: {action in self.startNewRound(); self.updateLabels() } )
         
         //present the alert
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
-        
-        startNewRound()
-        updateLabels()
     
     }
     
@@ -57,6 +81,13 @@ class ViewController: UIViewController {
     
     }
     
+    @IBAction func startOver(sender: AnyObject) {
+
+        startNewGame()
+        updateLabels()
+    }
+    
+    
     func startNewRound() {
         
         //        targetValue -  the highest number you will get is 99 because arc4random_uniform() treats
@@ -66,6 +97,7 @@ class ViewController: UIViewController {
         
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
+        round += 1
         
         //Put the UISlider back to Float that is the currentValue
         slider.value = Float(currentValue)
@@ -73,9 +105,19 @@ class ViewController: UIViewController {
         updateLabels()
     }
     
+    //restart game and reset all
+    func startNewGame() {
+        
+        score = 0
+        round = 0
+        startNewRound()
+    }
+    
     func updateLabels(){
             
-            targetLabel.text = String(targetValue)
+        targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
 
 }
